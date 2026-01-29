@@ -1,5 +1,5 @@
 import express from 'express'
-import { login, logout, register, sendVerifyOtp, verifyEmail } from '../controllers/authControllers.js';
+import { isAuthenticated, login, logout, register, resetPassword, sendResetOtp, sendVerifyOtp, verifyEmail } from '../controllers/authControllers.js';
 import { userAuth } from '../middleware/userAuth.js';
 
 
@@ -11,5 +11,9 @@ authRouter.post('/logout', logout)
 
 authRouter.post('/send-verify-otp', userAuth, sendVerifyOtp)
 authRouter.post('/verify-email', userAuth, verifyEmail)
+authRouter.post('/is-auth', userAuth, isAuthenticated)
+authRouter.post('/send-reset-otp', sendResetOtp)
+authRouter.post('/reset-password', resetPassword) 
+
 
 export default authRouter;

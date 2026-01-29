@@ -4,6 +4,7 @@ import cors from "cors";
 import 'dotenv/config';
 import { connect } from './config/mongodb.js';
 import authRouter from './routs/authRoutes.js'
+import userRouter from './routs/userRoutes.js';
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
     res.send("Api is working")
 })
 app.use('/api/auth', authRouter)
+app.use('/api/user', userRouter)
 
 
 app.listen(port, () => {
