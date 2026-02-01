@@ -20,7 +20,7 @@ export const AppContextProvider = (props) => {
           getUserData()
         }
       } catch (error) {
-        toString.error(error.message)
+        toast.error(error.message)
       }
   }
 

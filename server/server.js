@@ -8,10 +8,13 @@ import userRouter from "./routs/userRoutes.js";
 
 const app = express();
 
-const port = process.env.PORT || 4000;
-connect();
 
-const allowedOrigins = ["http://localhost:5173"];
+ await connect();
+
+const allowedOrigins = ["http://localhost:5173",
+  "https://your-frontend-name.vercel.app"
+];
+
 
 app.use(express.json());
 app.use(cookieParser());
@@ -24,7 +27,11 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 
+const port = process.env.PORT || 4000;
+
 app.listen(port, () => {
   console.log(`server is running on ${port}.`);
-  console.log(process.env.MONGODB_URL);
 });
+
+
+

@@ -30,7 +30,7 @@ const Login = () => {
         if (data.success) {
           (setIsLoggedin(true), getUserData(), navigate("/"));
         } else {
-          toast.error(error.message);
+          toast.error(data.message);
         }
       } else {
         const { data } = await axios.post(backendUrl + "/api/auth/login", {
