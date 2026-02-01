@@ -8,13 +8,12 @@ import userRouter from "./routs/userRoutes.js";
 
 const app = express();
 
+await connect();
 
- await connect();
-
-const allowedOrigins = ["http://localhost:5173",
-  "https://your-frontend-name.vercel.app"
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://authentication-system-virid.vercel.app/",
 ];
-
 
 app.use(express.json());
 app.use(cookieParser());
@@ -32,6 +31,3 @@ const port = process.env.PORT || 4000;
 app.listen(port, () => {
   console.log(`server is running on ${port}.`);
 });
-
-
-
