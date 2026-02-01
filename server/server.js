@@ -12,7 +12,7 @@ await connect();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://authentication-system-virid.vercel.app",
+  "https://authentication-system-pink-two.vercel.app",
 ];
 
 app.use(express.json());
